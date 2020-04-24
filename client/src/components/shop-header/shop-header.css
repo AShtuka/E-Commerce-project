@@ -1,0 +1,8 @@
+.cart {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    bottom: 21px;
+}
