@@ -1,16 +1,16 @@
-import React, {Fragment} from "react";
+import React from "react";
 
-import ShopHeader from "../../shop-header";
 import ListItems from "../../list-items";
+import MainLayout from "../layouts/main-layout";
 
 import './home-page.css'
 
+
 const HomePage = () => {
     return (
-        <Fragment>
-            <ShopHeader />
+        <MainLayout>
             <ListItems />
-        </Fragment>
+        </MainLayout>
     )
 };
 

@@ -5,6 +5,18 @@ const goodsLoaded = (newGoods) => {
     };
 };
 
+const goodsRequested = () => {
+    return { type: 'GOODS_REQUESTED'}
+};
+
+const goodsError = (error) => {
+    return {
+        type: 'GOODS_ERROR',
+        payload: error
+    }
+};
 export {
-    goodsLoaded
+    goodsLoaded,
+    goodsRequested,
+    goodsError
 };

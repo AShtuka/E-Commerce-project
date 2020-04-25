@@ -3,22 +3,31 @@ import {connect} from 'react-redux';
 
 import Item from "../item";
 import withDBService from "../hoc/with-db-service";
-import {goodsLoaded} from "../../actions";
+import {goodsLoaded, goodsRequested, goodsError} from "../../actions";
 import {compose} from "../../utils";
 
 
 import './list-items.css';
+import Spinner from "../spinner";
+import ErrorIndicator from "../error-indicator";
 
 class ListItem extends Component {
 
     componentDidMount() {
-        const {dbService} = this.props;
-        const data = dbService.getData();
-        this.props.goodsLoaded(data);
+        const {dbService, goodsLoaded, goodsRequested, goodsError} = this.props;
+        goodsRequested();
+        dbService.getData()
+            .then((data) => goodsLoaded(data))
+            .catch((error) => goodsError(error));
     };
 
     render() {
-        const {items} = this.props;
+        const {items, loading, error} = this.props;
+
+        if (loading) {return <Spinner />}
+
+        if (error) {return <ErrorIndicator />}
+
         return (
             <div className="row">
                 {
@@ -31,11 +40,15 @@ class ListItem extends Component {
     }
 };
 
-const mapStateToProps = ({goods}) => {
-    return { items: goods };
+const mapStateToProps = ({goods, loading, error}) => {
+    return {
+        items: goods,
+        loading,
+        error
+    };
 };
 
-const mapDispatchToProps = {goodsLoaded};
+const mapDispatchToProps = {goodsLoaded, goodsRequested, goodsError};
 
 export default compose(
     withDBService(),

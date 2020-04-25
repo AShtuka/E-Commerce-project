@@ -5,7 +5,7 @@ const Item = ({item}) => {
     const {title, price, imgUrl} = item;
 
     return (
-            <div className="col s6 m2">
+            <div className="col s6 m6 l3 xl 2">
                 <div className="card hoverable">
                     <div className="card-image">
                         <img src={imgUrl} alt='NOT FOUND' />
