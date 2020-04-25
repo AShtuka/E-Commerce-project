@@ -1,8 +1,8 @@
 import React from "react";
 import './item.css'
 
-const Item = ({item}) => {
-    const {title, price, imgUrl} = item;
+const Item = ({item, onAddedToCart}) => {
+    const {title, price, imgUrl, id} = item;
 
     return (
             <div className="col s6 m6 l3 xl 2">
@@ -15,7 +15,7 @@ const Item = ({item}) => {
                         <p>{price} $</p>
                     </div>
                     <div className="card-action center-align">
-                        <a href="#!">Add to cart</a>
+                        <div onClick={() => onAddedToCart(id)}>Add to cart</div>
                     </div>
                 </div>
             </div>

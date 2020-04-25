@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 import './cart-checkout.css';
 
-const CartCheckout = () => {
+const CartCheckout = ({orderTotal}) => {
     return (
         <Fragment>
             <h4>AMOUNT OF ORDERS</h4>
@@ -19,7 +19,7 @@ const CartCheckout = () => {
                 </tr>
                 <tr>
                     <td className='table-title'>Total</td>
-                    <td className='table-title'>$345</td>
+                    <td className='table-title'>$ {orderTotal}</td>
                 </tr>
                 </tbody>
             </table>

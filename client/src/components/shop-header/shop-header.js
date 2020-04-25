@@ -2,8 +2,10 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import './shop-header.css'
+import {connect} from "react-redux";
 
-const ShopHeader = () => {
+const ShopHeader = ({cartItemsAmount}) => {
+
     return (
         <nav>
             <div className="nav-wrapper">
@@ -12,7 +14,7 @@ const ShopHeader = () => {
                     <li  className='cart'>
                         <Link to="/cart">
                             <span className="material-icons">shopping_cart</span>
-                            <span className='cart-badge'>4</span>
+                            <span className='cart-badge'>{cartItemsAmount}</span>
                         </Link>
                     </li>
 
@@ -22,4 +24,8 @@ const ShopHeader = () => {
     )
 };
 
-export default ShopHeader;
+const mapStateToProps = ({shoppingCart: {cartItemsAmount}}) => {
+    return {cartItemsAmount}
+};
+
+export default connect(mapStateToProps)(ShopHeader);

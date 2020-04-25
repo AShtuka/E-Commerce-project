@@ -3,7 +3,7 @@ import CartItem from "../cart-item";
 
 import './list-cart-items.css';
 
-const ListCartItems = () => {
+const ListCartItems = ({items, onIncrease, onDecrease, onDelete}) => {
     return(
         <Fragment>
             <h1>Your order</h1>
@@ -19,7 +19,12 @@ const ListCartItems = () => {
                 </thead>
 
                 <tbody>
-                    <CartItem />
+                    {items.map((item) => <CartItem
+                        item={item}
+                        onIncrease={onIncrease}
+                        onDecrease={onDecrease}
+                        onDelete={onDelete}
+                        key={item.id}/>)}
                 </tbody>
             </table>
         </Fragment>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import ListItems from "../../list-items";
+import {ListItemsContainer} from '../../../containers'
 import MainLayout from "../layouts/main-layout";
 
 import './home-page.css'
@@ -9,7 +9,7 @@ import './home-page.css'
 const HomePage = () => {
     return (
         <MainLayout>
-            <ListItems />
+            <ListItemsContainer />
         </MainLayout>
     )
 };
