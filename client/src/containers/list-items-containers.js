@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {bindActionCreators} from "redux";
 import {connect} from 'react-redux';
 
 import {withDBService} from "../components/hoc";
@@ -38,10 +39,10 @@ const mapStateToProps = ({goodsList: {goods, loading, error}}) => {
 };
 
 const mapDispatchToProps = (dispatch, {dbService}) => {
-    return {
-        fetchGoods: fetchGoods(dbService, dispatch),
-        onAddedToCart: (id) => dispatch(itemAddedToCart(id))
-    }
+    return bindActionCreators({
+        fetchGoods: fetchGoods(dbService),
+        onAddedToCart: itemAddedToCart
+    }, dispatch)
 };
 
 export default compose(

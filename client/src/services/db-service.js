@@ -25,5 +25,5 @@ export default class DBService {
                 }
             }, 700)
         }))
-    }
+    };
 }

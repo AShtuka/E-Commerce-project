@@ -14,7 +14,7 @@ const Item = ({item, onAddedToCart}) => {
                         <span className="card-title">{title}</span>
                         <p>{price} $</p>
                     </div>
-                    <div className="card-action center-align">
+                    <div className="card-action center-align cursor">
                         <div onClick={() => onAddedToCart(id)}>Add to cart</div>
                     </div>
                 </div>

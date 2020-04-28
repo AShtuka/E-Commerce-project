@@ -9,13 +9,13 @@ const ListCartItems = ({items, onIncrease, onDecrease, onDelete}) => {
             <h1>Your order</h1>
             <table>
                 <thead>
-                <tr>
-                    <th></th>
-                    <th>Item</th>
-                    <th>Price</th>
-                    <th className='cart-item-count'>Count</th>
-                    <th>Total</th>
-                </tr>
+                    <tr>
+                        <th/>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th className='cart-item-count'>Count</th>
+                        <th>Total</th>
+                    </tr>
                 </thead>
 
                 <tbody>

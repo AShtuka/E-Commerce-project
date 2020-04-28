@@ -7,20 +7,20 @@ const CartCheckout = ({orderTotal}) => {
             <h4>AMOUNT OF ORDERS</h4>
             <table>
                 <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th/>
+                        <th/>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td className='table-title'>Delivery</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
-                    <td className='table-title'>Total</td>
-                    <td className='table-title'>$ {orderTotal}</td>
-                </tr>
+                    <tr>
+                        <td className='table-title'>Delivery</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td className='table-title'>Total</td>
+                        <td className='table-title'>$ {orderTotal}</td>
+                    </tr>
                 </tbody>
             </table>
 

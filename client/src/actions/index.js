@@ -16,7 +16,14 @@ const goodsError = (error) => {
     }
 };
 
-const fetchGoods = (dbService, dispatch) => () => {
+// const fetchGoods = (dbService, dispatch) => () => {
+//     dispatch(goodsRequested());
+//     dbService.getData()
+//         .then((data) => dispatch(goodsLoaded(data)))
+//         .catch((error) => dispatch(goodsError(error)));
+// };
+
+const fetchGoods = (dbService) => () => (dispatch) => {
     dispatch(goodsRequested());
     dbService.getData()
         .then((data) => dispatch(goodsLoaded(data)))
