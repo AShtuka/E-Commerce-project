@@ -1,3 +1,5 @@
+import DBService from "../../services/db-service";
+
 const goodsLoaded = (newGoods) => {
     return {
         type: 'FETCH_GOODS_SUCCESS',
@@ -16,16 +18,9 @@ const goodsError = (error) => {
     }
 };
 
-// const fetchGoods = (dbService, dispatch) => () => {
-//     dispatch(goodsRequested());
-//     dbService.getData()
-//         .then((data) => dispatch(goodsLoaded(data)))
-//         .catch((error) => dispatch(goodsError(error)));
-// };
-
-const fetchGoods = (dbService) => () => (dispatch) => {
+const fetchGoods = (dispatch) => {
     dispatch(goodsRequested());
-    dbService.getData()
+    new DBService().getData()
         .then((data) => dispatch(goodsLoaded(data)))
         .catch((error) => dispatch(goodsError(error)));
 };

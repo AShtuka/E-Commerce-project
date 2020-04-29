@@ -1,7 +1,11 @@
 import React, {Fragment} from "react";
 import './cart-checkout.css';
+import {useSelector} from "react-redux";
 
-const CartCheckout = ({orderTotal}) => {
+const CartCheckout = () => {
+
+    const orderTotal = useSelector(state => state.shoppingCart.orderTotal);
+
     return (
         <Fragment>
             <h4>AMOUNT OF ORDERS</h4>

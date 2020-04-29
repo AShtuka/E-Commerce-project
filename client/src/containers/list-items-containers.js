@@ -1,51 +1,32 @@
-import React, {Component} from "react";
-import {bindActionCreators} from "redux";
-import {connect} from 'react-redux';
-
-import {withDBService} from "../components/hoc";
-import {fetchGoods, itemAddedToCart} from "../actions";
-import {compose} from "../utils";
+import React, {useEffect} from "react";
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchGoods} from "../store/actions";
 
 import ListItems from '../components/list-items'
 import Spinner from "../components/spinner";
 import ErrorIndicator from "../components/error-indicator";
+import ErrorBoundary from "../components/error-boundary";
 
+const ListItemContainer = () => {
 
+    const dispatch = useDispatch();
+    const {loading, error} = useSelector(state => state.goodsList);
 
-class ListItemContainer extends Component {
+    useEffect(() => {
+       fetchGoods(dispatch);
+    }, [dispatch]);
 
-    componentDidMount() {
-        this.props.fetchGoods();
-    };
+    const errorMassage = error ? <ErrorIndicator/> : null;
+    const spinner = loading ? <Spinner /> : null;
+    const content = !(loading || error) ? <ListItems /> : null;
 
-    render() {
-        const {items, loading, error, onAddedToCart} = this.props;
-
-        if (loading) {return <Spinner />}
-
-        if (error) {return <ErrorIndicator />}
-
-        return <ListItems items={items}
-                          onAddedToCart={onAddedToCart}/>
-    }
+    return (
+        <ErrorBoundary>
+            {errorMassage}
+            {spinner}
+            {content}
+        </ErrorBoundary>
+    );
 };
 
-const mapStateToProps = ({goodsList: {goods, loading, error}}) => {
-    return {
-        items: goods,
-        loading,
-        error
-    };
-};
-
-const mapDispatchToProps = (dispatch, {dbService}) => {
-    return bindActionCreators({
-        fetchGoods: fetchGoods(dbService),
-        onAddedToCart: itemAddedToCart
-    }, dispatch)
-};
-
-export default compose(
-    withDBService(),
-    connect(mapStateToProps, mapDispatchToProps)
-)(ListItemContainer);
+export default ListItemContainer;

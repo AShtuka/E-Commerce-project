@@ -6,9 +6,8 @@ import './app.css';
 import HomePage from "../pages/home-page";
 import CartPage from "../pages/cart-page";
 
-import {withDBService} from '../hoc'
 
-const App = ({dbService}) => {
+const App = () => {
     return (
         <Switch>
             <Route  path = '/'
@@ -22,4 +21,4 @@ const App = ({dbService}) => {
 };
 
 
-export default withDBService()(App);
+export default App;

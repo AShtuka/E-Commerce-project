@@ -1,12 +1,10 @@
-const updateGoodsList = (state, action) => {
+const initialState = {
+    goods: [],
+    loading: true,
+    error: null,
+};
 
-    if (state === undefined) {
-        return {
-            goods: [],
-            loading: true,
-            error: null,
-        };
-    }
+const GoodsList = (state = initialState, action) => {
 
     switch (action.type) {
         case 'FETCH_GOODS_REQUEST' :
@@ -30,8 +28,8 @@ const updateGoodsList = (state, action) => {
                 error: action.payload
             };
 
-        default: return state.goodsList;
+        default: return state;
     }
 };
 
-export default updateGoodsList;
+export default GoodsList;

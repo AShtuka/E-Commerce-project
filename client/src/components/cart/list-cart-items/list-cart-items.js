@@ -2,8 +2,12 @@ import React, {Fragment} from "react";
 import CartItem from "../cart-item";
 
 import './list-cart-items.css';
+import {useSelector} from "react-redux";
 
-const ListCartItems = ({items, onIncrease, onDecrease, onDelete}) => {
+const ListCartItems = () => {
+
+    const cartItems = useSelector(state => state.shoppingCart.cartItems);
+
     return(
         <Fragment>
             <h1>Your order</h1>
@@ -19,11 +23,8 @@ const ListCartItems = ({items, onIncrease, onDecrease, onDelete}) => {
                 </thead>
 
                 <tbody>
-                    {items.map((item) => <CartItem
+                    {cartItems.map((item) => <CartItem
                         item={item}
-                        onIncrease={onIncrease}
-                        onDecrease={onDecrease}
-                        onDelete={onDelete}
                         key={item.id}/>)}
                 </tbody>
             </table>

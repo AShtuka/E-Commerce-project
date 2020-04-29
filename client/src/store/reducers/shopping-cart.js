@@ -1,3 +1,9 @@
+const initialState = {
+    cartItems: [],
+    cartItemsAmount: 0,
+    orderTotal: 0
+};
+
 const updateCartItems = (cartItems, item, idx) => {
 
     if (item.count === 0){
@@ -37,10 +43,9 @@ const updateCartItem = (item, cartItem = {}, quantity) => {
 
 };
 
-const updateOrder = (state, itemId, quantity) => {
-    const {goodsList: {goods} , shoppingCart: {cartItems, cartItemsAmount, orderTotal}} = state;
-    const item = goods.find(({id}) => id === itemId);
-    const cartItemIndex = cartItems.findIndex(({id}) => id === itemId);
+const updateOrder = (state, item, quantity) => {
+    const {cartItems, cartItemsAmount, orderTotal} = state;
+    const cartItemIndex = cartItems.findIndex(({id}) => id === item.id);
     const cartItem = cartItems[cartItemIndex];
 
     const newItem = updateCartItem(item, cartItem, quantity);
@@ -50,29 +55,23 @@ const updateOrder = (state, itemId, quantity) => {
         orderTotal: orderTotal + newItem.price * quantity};
 };
 
-const updateShoppingCart = (state, action) => {
+const shoppingCart = (state = initialState, action) => {
 
-    if (state === undefined) {
-        return {
-            cartItems: [],
-            cartItemsAmount: 0,
-            orderTotal: 0
-        };
-    }
+    const item = action.payload;
 
     switch (action.type) {
         case 'ITEM_ADDED_TO_CART' :
-            return updateOrder(state, action.payload, 1);
+            return updateOrder(state, item , 1);
 
         case 'ITEM_REMOVED_FROM_CART' :
-            return updateOrder(state, action.payload, -1);
+            return updateOrder(state, item , -1);
 
         case 'ALL_ITEMS_REMOVED_FROM_CART' :
-            const item = state.shoppingCart.cartItems.find(({id}) => id === action.payload);
-            return updateOrder(state, action.payload, -item.count);
+            const cartItem = state.cartItems.find(({id}) => id === item.id);
+            return updateOrder(state, item , -cartItem.count);
 
-        default: return state.shoppingCart;
+        default: return state;
     }
 };
 
-export default updateShoppingCart;
+export default shoppingCart;

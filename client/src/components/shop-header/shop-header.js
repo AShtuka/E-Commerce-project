@@ -2,9 +2,11 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import './shop-header.css'
-import {connect} from "react-redux";
+import {useSelector} from "react-redux";
 
-const ShopHeader = ({cartItemsAmount}) => {
+const ShopHeader = () => {
+
+    const cartItemsAmount = useSelector(state => state.shoppingCart.cartItemsAmount);
 
     return (
         <nav>
@@ -24,8 +26,4 @@ const ShopHeader = ({cartItemsAmount}) => {
     )
 };
 
-const mapStateToProps = ({shoppingCart: {cartItemsAmount}}) => {
-    return {cartItemsAmount}
-};
-
-export default connect(mapStateToProps)(ShopHeader);
+export default ShopHeader;

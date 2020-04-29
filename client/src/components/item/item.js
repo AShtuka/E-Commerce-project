@@ -1,8 +1,12 @@
 import React from "react";
 import './item.css'
+import {useDispatch} from "react-redux";
+import {itemAddedToCart} from '../../store/actions'
 
-const Item = ({item, onAddedToCart}) => {
-    const {title, price, imgUrl, id} = item;
+const Item = ({item}) => {
+    const {title, price, imgUrl} = item;
+
+    const dispatch = useDispatch();
 
     return (
             <div className="col s6 m6 l3 xl 2">
@@ -15,7 +19,7 @@ const Item = ({item, onAddedToCart}) => {
                         <p>{price} $</p>
                     </div>
                     <div className="card-action center-align cursor">
-                        <div onClick={() => onAddedToCart(id)}>Add to cart</div>
+                        <div onClick={() => dispatch(itemAddedToCart(item))}>Add to cart</div>
                     </div>
                 </div>
             </div>
