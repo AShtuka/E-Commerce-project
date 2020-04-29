@@ -1,29 +1,10 @@
-export default class DBService {
+import CRUD_API from './crud-api'
 
-    data = [
-        {
-            id: 1,
-            title: 'BLASTER NERF ELITE DISRUPTOR',
-            price: 345,
-            imgUrl: 'https://nerf.com.ua/wp-content/uploads/2017/04/test-2.jpg'
-        },
-        {
-            id: 2,
-            title: 'BLASTER NERF ELITE SURGEFIRE',
-            price: 745,
-            imgUrl: 'https://nerf.com.ua/wp-content/uploads/2018/02/E0011.jpg'
-        }
-    ];
+export default class DBService extends CRUD_API {
 
     getData() {
-        return new Promise(((resolve, reject) => {
-            setTimeout(() => {
-                if (Math.random() < 0.75) {
-                    resolve(this.data)
-                } else {
-                    reject(new Error('Something bed happened'));
-                }
-            }, 700)
-        }))
-    };
-}
+        return super.get('')
+            .then(res => res.data)
+            .catch(err => err)
+    }
+};

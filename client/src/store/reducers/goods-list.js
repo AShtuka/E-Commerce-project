@@ -15,6 +15,7 @@ const GoodsList = (state = initialState, action) => {
             };
 
         case 'FETCH_GOODS_SUCCESS' :
+            console.log(action.payload);
             return {
                 goods: action.payload,
                 loading: false,
