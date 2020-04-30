@@ -6,3 +6,15 @@
     position: absolute;
     bottom: 21px;
 }
+
+.header-center-block {
+    margin-left: calc(50% - 180px);
+}
+
+.vertical-alight {
+    padding-top: 9px;
+}
+
+.brand-logo {
+    left: 15px;
+}
