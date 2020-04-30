@@ -1,0 +1,25 @@
+.header-center-block {
+    margin-left: calc(50% - 180px);
+    position: relative;
+}
+
+.list-category-container {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    top: 64px;
+    z-index: 100;
+    color: black;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.appearance {
+    display: block;
+    animation: appearance 1s;
+}
+
+@keyframes appearance {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}

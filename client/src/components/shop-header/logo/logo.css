@@ -1,0 +1,14 @@
+.brand-logo {
+    left: 15px;
+    top: 5px;
+}
+
+.logo {
+    width: 70%;
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 65%;
+    }
+}

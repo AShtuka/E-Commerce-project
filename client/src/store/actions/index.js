@@ -46,10 +46,30 @@ const itemAddedToCart = (itemId) => {
     }
 };
 
+const listCategoryShow = () => {
+    return {
+        type: 'LIST_CATEGORY_SHOW'
+    }
+};
+
+const listCategoryLostHover = () => {
+    return {
+        type: 'LIST_CATEGORY_LOST_HOVER'
+    }
+};
+
+const listCategoryHidden = () => {
+    return {
+        type: 'LIST_CATEGORY_HIDDEN'
+    }
+};
 
 export {
     fetchGoods,
     itemAddedToCart,
     itemRemovedFromCart,
-    allItemsRemovedFromCart
+    allItemsRemovedFromCart,
+    listCategoryHidden,
+    listCategoryShow,
+    listCategoryLostHover
 };

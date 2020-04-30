@@ -1,0 +1,14 @@
+.vertical-alight {
+    position: relative;
+    top: 9px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .menu-btn {
+        display: block;
+    }
+}

@@ -1,0 +1,14 @@
+.category-arrow {
+    position: relative;
+    top: 9px;
+}
+
+.collection a.collection-item {
+    padding: 0 10px 0 0;
+    border: none;
+    color: black;
+}
+
+.collection {
+     border: none;
+}
