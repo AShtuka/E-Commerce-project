@@ -17,7 +17,7 @@ const MainMenu = () => {
         if (!isHover) {
             timer = setTimeout(() => {
                 dispatch(listCategoryHidden())
-            }, 2000)
+            }, 700)
         };
         return () => clearTimeout(timer);
     });

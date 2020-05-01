@@ -1,0 +1,24 @@
+.main-container {
+    width: 100%;
+    background-color: #f5f6f8;
+    margin-top: 2px;
+}
+
+.main-layout-container {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+    .main-layout-container {
+        width: 970px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main-layout-container {
+        width: 100%;
+        padding: 50px 15px 0;
+    }
+}

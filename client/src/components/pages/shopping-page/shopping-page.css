@@ -1,0 +1,11 @@
+.shopping-page-container {
+    display: flex;
+}
+
+.shopping-page-menu {
+    width: 25%;
+}
+
+.shopping-page-items {
+    width: 75%;
+}

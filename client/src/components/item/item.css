@@ -1,3 +1,7 @@
 .cursor {
     cursor: pointer;
 }
+
+.item-container {
+    width: 32%;
+}

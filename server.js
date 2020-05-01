@@ -19,7 +19,13 @@ const data = [
         title: 'BLASTER NERF ELITE SURGEFIRE',
         price: 75,
         imgUrl: 'https://nerf.com.ua/wp-content/uploads/2018/02/E0011.jpg'
-    }
+    },
+    {
+        id: 3,
+        title: 'Nerf Fortnite Super Soaker',
+        price: 15,
+        imgUrl: 'https://nerf.com.ua/wp-content/uploads/2019/06/HC-E-2-600x600.jpg'
+    },
 ];
 
 app.use(bodyParser.json());

@@ -10,7 +10,7 @@ const ListItems = () => {
     const items = useSelector(state => state.goodsList.goods);
 
     return (
-        <div className="row">
+        <div className="items-container">
             {
                 items.map(item => {
                     return <Item key={item.id}

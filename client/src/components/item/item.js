@@ -9,7 +9,7 @@ const Item = ({item}) => {
     const dispatch = useDispatch();
 
     return (
-            <div className="col s6 m6 l3 xl 2">
+            <div className="item-container">
                 <div className="card hoverable">
                     <div className="card-image">
                         <img src={imgUrl} alt='NOT FOUND' />

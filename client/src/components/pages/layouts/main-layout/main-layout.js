@@ -7,8 +7,10 @@ const MainLayout = (props) => {
     return (
         <Fragment>
             <ShopHeader />
-            <div className='main-layout-container'>
-                {props.children}
+            <div className='main-container'>
+                <div className='main-layout-container'>
+                    {props.children}
+                </div>
             </div>
         </Fragment>
     )

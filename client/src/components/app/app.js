@@ -5,6 +5,7 @@ import './app.css';
 
 import HomePage from "../pages/home-page";
 import CartPage from "../pages/cart-page";
+import ShoppingPage from "../pages/shopping-page";
 
 
 const App = () => {
@@ -16,6 +17,9 @@ const App = () => {
 
             <Route  path='/cart'
                     component = {CartPage}/>
+
+            <Route  path='/shopping-page'
+                    component = {ShoppingPage}/>
         </Switch>
     )
 };
