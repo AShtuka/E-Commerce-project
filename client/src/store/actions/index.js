@@ -64,6 +64,18 @@ const listCategoryHidden = () => {
     }
 };
 
+const listCategoryOpen = () => {
+    return {
+        type: 'LIST_CATEGORY_OPEN'
+    }
+};
+
+const mobileMenuOpen = () => {
+    return {
+        type: 'MOBILE_MENU_OPEN'
+    }
+};
+
 export {
     fetchGoods,
     itemAddedToCart,
@@ -71,5 +83,7 @@ export {
     allItemsRemovedFromCart,
     listCategoryHidden,
     listCategoryShow,
-    listCategoryLostHover
+    listCategoryLostHover,
+    listCategoryOpen,
+    mobileMenuOpen,
 };

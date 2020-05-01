@@ -7,8 +7,10 @@
     padding: 0 10px 0 0;
     border: none;
     color: black;
+    background-color: #f5f6f8;
 }
 
 .collection {
-     border: none;
+    border: none;
+    background-color: #f5f6f8;
 }

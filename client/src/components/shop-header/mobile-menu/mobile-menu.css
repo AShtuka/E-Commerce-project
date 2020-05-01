@@ -12,3 +12,68 @@
         display: block;
     }
 }
+
+.mobile-menu-container {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    animation: appearance 1s;
+}
+
+@keyframes appearance {
+    0%   { right: 100%; }
+    100% { opacity: 0%; }
+}
+
+.mobile-menu {
+    width: 300px;
+    background-color: #f5f6f8;
+    height: 100vh;
+    overflow: auto;
+}
+
+.empty-block {
+    width: calc(100% - 300px);
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.mobile-menu-btn-container {
+    display: flex;
+}
+
+.mobile-menu-btn {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    height: 56px;
+    background-color: black;
+    width: 50%;
+    cursor: pointer;
+    border-left: 1px solid gray;
+}
+
+.mobile-menu-btn-icon {
+    position: relative;
+    top: 8px;
+    margin-right: 5px;
+}
+
+.mobile-menu-list-container {
+    color: black;
+    font-size: 14px;
+    padding: 15px 20px 0;
+    font-weight: 500;
+}
+
+.material-icons.mobile-menu-btn-icon.right {
+    font-size: 25px;
+    top:13px;
+    cursor: pointer;
+    margin-right: 17px;
+}
+
+.hidden {
+    display: none;
+}
