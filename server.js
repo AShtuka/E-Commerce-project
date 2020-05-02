@@ -23,7 +23,7 @@ const data = [
         price: 75,
         imgUrl: [
             'https://nerf.com.ua/wp-content/uploads/2018/02/E0011.jpg',
-            'https://nerf.com.ua/wp-content/uploads/2018/02/E0011-2-1.jpg'
+            'https://nerf.com.ua/wp-content/uploads/2018/02/E0011-4.jpg'
         ]
     },
     {

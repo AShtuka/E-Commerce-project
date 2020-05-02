@@ -1,9 +1,8 @@
 import React, {Fragment} from "react";
-import {Link} from "react-router-dom";
 import './mobile-menu.css';
 import ListCategories from "../../list-categories";
 import {useDispatch, useSelector} from "react-redux";
-import {listCategoryOpen, mobileMenuOpen} from "../../../store/actions";
+import {listCategoryOpen, mobileMenuOpen} from "../../../store/actions/shop-header";
 
 const MobileMenu = () => {
 
@@ -14,16 +13,21 @@ const MobileMenu = () => {
     const hiddenCategories = isCategoriesOpen ? '' : 'hidden';
     const hiddenMenu = isMenuOpen ? 'mobile-menu-container' : 'hidden';
 
+    const clickHandler = () => {
+        dispatch(listCategoryOpen());
+        dispatch(mobileMenuOpen())
+    };
+
     return (
         <Fragment>
             <ul className="left menu-btn">
                 <li>
-                    <Link to=''>
+                    <div className='mobile-menu-icon'>
                         <span className="material-icons vertical-alight"
                               onClick={() => dispatch(mobileMenuOpen())}>
                             menu
                         </span>
-                    </Link>
+                    </div>
                 </li>
             </ul>
             <div className={hiddenMenu}>
@@ -45,7 +49,10 @@ const MobileMenu = () => {
                                   onClick={() => dispatch(listCategoryOpen())}>
                                 {btnName}
                             </span>
-                            <span className={hiddenCategories}><ListCategories /></span>
+                            <span className={hiddenCategories}
+                                  onClick={clickHandler}>
+                                <ListCategories />
+                            </span>
                         </div>
                         <div>DELIVERY</div>
                         <div>BLOG</div>

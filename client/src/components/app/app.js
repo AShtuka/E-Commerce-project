@@ -7,7 +7,6 @@ import HomePage from "../pages/home-page";
 import CartPage from "../pages/cart-page";
 import ShoppingPage from "../pages/shopping-page";
 
-
 const App = () => {
     return (
         <Switch>
@@ -23,6 +22,5 @@ const App = () => {
         </Switch>
     )
 };
-
 
 export default App;

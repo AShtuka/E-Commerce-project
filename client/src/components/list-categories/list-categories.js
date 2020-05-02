@@ -27,6 +27,7 @@ const ListCategories = () => {
 };
 
 const CategoryItem = ({category : {categoryTitle, categoryItemsAmount}}) => {
+
     return  <Link to="/shopping-page" className="collection-item">
                 <span className="material-icons category-arrow">arrow_right</span>
                 {categoryTitle} ({categoryItemsAmount})

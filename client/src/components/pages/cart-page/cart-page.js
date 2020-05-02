@@ -5,7 +5,6 @@ import {CartContainer} from '../../../containers'
 
 import './cart-page.css'
 
-
 const CartPage =() => {
     return (
         <MainLayout>

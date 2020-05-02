@@ -4,7 +4,6 @@ import {useSelector} from "react-redux";
 
 import './auxiliary-menu.css'
 
-
 const AuxiliaryMenu = () => {
 
     const cartItemsAmount = useSelector(state => state.shoppingCart.cartItemsAmount);

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchGoods} from "../store/actions";
+import {fetchGoods} from "../store/actions/list-items";
 
 import ListItems from '../components/list-items'
 import Spinner from "../components/spinner";

@@ -3,14 +3,14 @@ import {Link} from "react-router-dom";
 import './main-menu.css';
 import ListCategories from "../../list-categories";
 import {useDispatch, useSelector} from "react-redux";
-import {listCategoryShow, listCategoryHidden, listCategoryLostHover} from "../../../store/actions";
+import {listCategoryShow, listCategoryHidden, listCategoryLostHover} from "../../../store/actions/shop-header";
 
 const MainMenu = () => {
 
     const dispatch = useDispatch();
     const appearance = useSelector(state => state.shopHeaderMainMenu.appearance);
     const isHover = useSelector(state => state.shopHeaderMainMenu.hover);
-    const showListCategory = appearance ? 'list-category-container appearance' : 'list-category-container ';
+    const showListCategory = appearance ? 'list-category-container appearance' : 'list-category-container';
 
     useEffect(() => {
         let timer;
@@ -33,6 +33,7 @@ const MainMenu = () => {
             <div className={showListCategory}
                  onMouseOver={() => dispatch(listCategoryShow())}
                  onMouseLeave={() => dispatch(listCategoryLostHover())}
+                 onClick={() => dispatch(listCategoryHidden())}
             >
                 <ListCategories />
             </div>
@@ -43,7 +44,7 @@ const MainMenu = () => {
                 <Link to="/blog">BLOG</Link>
             </li>
             <li>
-                <Link to="/contact">CONTACT</Link>
+                <Link to="/contact">CONTACTS</Link>
             </li>
         </ul>
     )

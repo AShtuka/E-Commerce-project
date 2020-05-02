@@ -4,8 +4,6 @@ import MainLayout from "../layouts/main-layout";
 
 import './home-page.css'
 
-
-
 const HomePage = () => {
     return (
         <MainLayout>

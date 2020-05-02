@@ -1,7 +1,7 @@
 import React from "react";
 import './cart-item.css';
 import {useDispatch} from "react-redux";
-import {allItemsRemovedFromCart, itemAddedToCart, itemRemovedFromCart } from "../../../store/actions";
+import {allItemsRemovedFromCart, itemAddedToCart, itemRemovedFromCart } from "../../../store/actions/cart";
 
 const CartItem = ({item}) => {
 
@@ -15,7 +15,7 @@ const CartItem = ({item}) => {
                 <span className="material-icons" onClick={() => dispatch(allItemsRemovedFromCart(item))}>highlight_off</span>
             </td>
             <td className='item-column'>
-                <img className='cart-item-img' src={imgUrl} alt='NOT FOUND' />
+                <img className='cart-item-img' src={imgUrl[0]} alt='NOT FOUND' />
                 <span className='item-title'>{title}</span>
             </td>
             <td>$ {price}</td>
