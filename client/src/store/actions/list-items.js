@@ -1,4 +1,4 @@
-import DBService from "../../services/db-service";
+import ItemsListApi from "../../services/items-list-api";
 
 const goodsLoaded = (newGoods) => {
     return {
@@ -20,7 +20,7 @@ const goodsError = (error) => {
 
 const fetchGoods = (dispatch) => {
     dispatch(goodsRequested());
-    new DBService().getData()
+    new ItemsListApi().getItemsList()
         .then((data) => dispatch(goodsLoaded(data)))
         .catch((error) => dispatch(goodsError(error)));
 };

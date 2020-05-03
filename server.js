@@ -6,43 +6,19 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 //const mainRoute = require("./routes/index");
-
-const data = [
-    {
-        id: 1,
-        title: 'BLASTER NERF ELITE DISRUPTOR',
-        price: 35,
-        imgUrl: [
-            'https://nerf.com.ua/wp-content/uploads/2017/04/test-2.jpg',
-            'https://nerf.com.ua/wp-content/uploads/2017/04/nerf_disruptor_2-1.jpg'
-        ]
-    },
-    {
-        id: 2,
-        title: 'BLASTER NERF ELITE SURGEFIRE',
-        price: 75,
-        imgUrl: [
-            'https://nerf.com.ua/wp-content/uploads/2018/02/E0011.jpg',
-            'https://nerf.com.ua/wp-content/uploads/2018/02/E0011-4.jpg'
-        ]
-    },
-    {
-        id: 3,
-        title: 'Nerf Fortnite Super Soaker',
-        price: 15,
-        imgUrl: [
-            'https://nerf.com.ua/wp-content/uploads/2019/06/HC-E-2-600x600.jpg',
-            'https://nerf.com.ua/wp-content/uploads/2019/09/E7515-2.jpg'
-        ]
-    },
-];
+const itemsList = require('./test-data/items-list');
+const categoriesList = require('./test-data/categories-list');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // API calls
-app.get('/api/', (req, res) => {
-    res.send(data);
+app.get('/api/items-list', (req, res) => {
+    res.send(itemsList);
+});
+
+app.get('/api/categories-list', (req, res) => {
+    res.send(categoriesList);
 });
 
 app.post('/api/world', (req, res) => {

@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
 import './main-menu.css';
-import ListCategories from "../../list-categories";
+import ListCategoriesContainer from "../../../containers/list-categories-container";
 import {useDispatch, useSelector} from "react-redux";
 import {listCategoryShow, listCategoryHidden, listCategoryLostHover} from "../../../store/actions/shop-header";
 
@@ -35,7 +35,7 @@ const MainMenu = () => {
                  onMouseLeave={() => dispatch(listCategoryLostHover())}
                  onClick={() => dispatch(listCategoryHidden())}
             >
-                <ListCategories />
+                <ListCategoriesContainer />
             </div>
             <li>
                 <Link to="/delivery">DELIVERY</Link>
