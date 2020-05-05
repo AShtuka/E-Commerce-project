@@ -1,0 +1,21 @@
+.card .card-image {
+    padding: 10px;
+}
+
+.fade-enter img {
+    opacity: 0.01;
+}
+.fade-enter-active img {
+    opacity: 1;
+}
+.fade-exit img{
+    opacity: 1;
+}
+.fade-exit-active img {
+    opacity: 0.01;
+}
+.fade-enter-active img,
+.fade-exit-active img {
+    transition: opacity 200ms ease-in;
+}
+

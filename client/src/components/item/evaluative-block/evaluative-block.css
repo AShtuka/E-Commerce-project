@@ -1,0 +1,13 @@
+.evaluative-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.evaluative-container .material-icons {
+    font-size: 1.1em;
+    color: #105180;
+}
+
+.stars .material-icons {
+    cursor: auto;
+}

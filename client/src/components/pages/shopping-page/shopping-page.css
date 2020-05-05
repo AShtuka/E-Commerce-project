@@ -9,3 +9,13 @@
 .shopping-page-items {
     width: 75%;
 }
+
+@media screen and (max-width: 767px) {
+    .shopping-page-menu {
+        display: none;
+    }
+
+    .shopping-page-items {
+        width: 100%;
+    }
+}

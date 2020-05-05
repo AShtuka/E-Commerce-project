@@ -10,13 +10,13 @@
     padding-top: 50px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
     .main-layout-container {
         width: 970px;
     }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
     .main-layout-container {
         width: 100%;
         padding: 50px 15px 0;

@@ -1,13 +1,5 @@
-.cursor {
-    cursor: pointer;
-}
-
 .item-container {
     width: 32%;
-}
-
-.card .card-image {
-    padding: 10px;
 }
 
 .card .card-content .card-title {
@@ -25,47 +17,8 @@
     text-transform: uppercase;
 }
 
-.price {
-    font-size: 1.28em;
-    color: #7c7c7c;
-}
-
-.evaluative-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.evaluative-container .material-icons {
-    font-size: 1.1em;
-}
-
-.stars .material-icons {
-    cursor: auto;
-}
-
-.info-container {
-    position: relative;
-}
-
-.buy-btn-container {
-    position: absolute;
-    top: 16%;
-    left: calc(50% - 75px);
-}
-
-.buy-btn {
-    border: 2px solid black;
-    padding: 7px 31px;
-    font-size: 1em;
-    border-radius: 18px;
-    cursor: pointer;
-}
-
-.buy-btn:hover {
-    background-color: black;
-    color: #f5f6f8;
-}
-
-.shop-item-hide {
-    opacity: 0;
+@media screen and (max-width: 767px) {
+    .item-container {
+        width: 49%;
+    }
 }
