@@ -4,7 +4,7 @@ const initialState = {
     error: null,
 };
 
-const CategoriesList = (state = initialState, action) => {
+const ListCategory = (state = initialState, action) => {
 
     switch (action.type) {
         case 'FETCH_CATEGORIES_REQUEST' :
@@ -32,4 +32,4 @@ const CategoriesList = (state = initialState, action) => {
     }
 };
 
-export default CategoriesList;
+export default ListCategory;

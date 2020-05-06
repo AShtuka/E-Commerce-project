@@ -1,29 +1,29 @@
 const initialState = {
-    goods: [],
+    products: [],
     loading: true,
     error: null,
 };
 
-const GoodsList = (state = initialState, action) => {
+const ListProduct = (state = initialState, action) => {
 
     switch (action.type) {
-        case 'FETCH_GOODS_REQUEST' :
+        case 'FETCH_PRODUCT_REQUEST' :
             return {
-                goods: [],
+                products: [],
                 loading: true,
                 error: null
             };
 
-        case 'FETCH_GOODS_SUCCESS' :
+        case 'FETCH_PRODUCT_SUCCESS' :
             return {
-                goods: action.payload,
+                products: action.payload,
                 loading: false,
                 error: null
             };
 
-        case 'FETCH_GOODS_FAILURE' :
+        case 'FETCH_PRODUCT_FAILURE' :
             return {
-                goods: [],
+                products: [],
                 loading: false,
                 error: action.payload
             };
@@ -32,4 +32,4 @@ const GoodsList = (state = initialState, action) => {
     }
 };
 
-export default GoodsList;
+export default ListProduct;

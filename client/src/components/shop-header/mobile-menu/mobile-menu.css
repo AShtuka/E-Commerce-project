@@ -18,12 +18,6 @@
     width: 100%;
     z-index: 100;
     display: flex;
-    animation: appearance 1s;
-}
-
-@keyframes appearance {
-    0%   { right: 100%; }
-    100% { opacity: 0%; }
 }
 
 .mobile-menu {
@@ -69,7 +63,7 @@
 
 .material-icons.mobile-menu-btn-icon.right {
     font-size: 25px;
-    top:19px;
+    top:17px;
     cursor: pointer;
     margin-right: 17px;
 }
@@ -81,3 +75,25 @@
 .mobile-menu-icon {
     padding: 0 15px;
 }
+
+.mobile-menu-container.entering {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.mobile-menu-container.entered {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 500ms, transform 500ms;
+}
+.mobile-menu-container.exiting {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.mobile-menu-container.exited {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 500ms, transform 500ms;
+}
+
+
+

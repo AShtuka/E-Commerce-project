@@ -1,10 +1,10 @@
 import React from "react";
 
-import {ListItemsContainer} from '../../../containers'
+import {ListProductContainer} from '../../../containers'
 import MainLayout from "../layouts/main-layout";
 
 import './shopping-page.css'
-import ListCategories from "../../list-categories";
+import ListCategories from "../../list-category";
 
 const ShoppingPage = () => {
     return (
@@ -14,7 +14,7 @@ const ShoppingPage = () => {
                     <ListCategories />
                 </div>
                 <div className='shopping-page-items'>
-                    <ListItemsContainer />
+                    <ListProductContainer />
                 </div>
             </div>
         </MainLayout>

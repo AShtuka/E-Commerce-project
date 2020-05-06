@@ -1,27 +1,27 @@
 import React from "react";
 import {useDispatch} from "react-redux";
-import {shopItemLoseHover, shopItemHover} from "../../store/actions/shop-item";
+import {productLoseHover, productHover} from "../../store/actions/product";
 import EvaluativeBlock from "./evaluative-block";
 import Img from "./img";
 import InfoBlock from "./info-block";
 
 import './item.css'
 
-const Item = ({item}) => {
+const Item = ({product}) => {
 
-    const {imgUrl, id} = item;
+    const {imgUrl, id} = product;
     const dispatch = useDispatch();
 
     return (
             <div className="item-container">
                 <div className="card hoverable"
-                     onMouseOver={() => dispatch(shopItemHover(id))}
-                     onMouseLeave={() => dispatch(shopItemLoseHover())}
+                     onMouseOver={() => dispatch(productHover(id))}
+                     onMouseLeave={() => dispatch(productLoseHover())}
                 >
                     <Img imgUrl={imgUrl} id={id}/>
                     <div className="card-content">
                         <EvaluativeBlock />
-                        <InfoBlock item={item}/>
+                        <InfoBlock product={product}/>
                     </div>
                 </div>
             </div>

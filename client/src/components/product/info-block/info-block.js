@@ -5,18 +5,18 @@ import Transition from "react-transition-group/Transition";
 
 import './info-block.css';
 
-const InfoBlock = ({item}) => {
+const InfoBlock = ({product}) => {
 
-    const {title, price, id} = item;
-    const itemId = useSelector(state => state.shopItem.itemId);
+    const {title, price, id} = product;
+    const productId = useSelector(state => state.product.productId);
     const dispatch = useDispatch();
 
-    const showInfo = (id === itemId) ? 'shop-item-hide' : '';
-    const showBuyBtn = (id === itemId) ? 'buy-btn-container' : 'buy-btn-container shop-item-hide';
+    const showInfo = (id === productId) ? 'product-hide' : '';
+    const showBuyBtn = (id === productId) ? 'buy-btn-container' : 'buy-btn-container product-hide';
 
     return (
         <div className='info-container'>
-            <Transition in={(id === itemId)} timeout={200}>
+            <Transition in={(id === productId)} timeout={200}>
                 {
                     (state) => {
                         return (
@@ -26,12 +26,12 @@ const InfoBlock = ({item}) => {
                                     <div className='buy-btn-mobile-container'>
                                         <p className='price'>{price} $</p>
                                         <span className="material-icons buy-btn-mobile"
-                                              onClick={() => dispatch(itemAddedToCart(item))}>shopping_cart</span>
+                                              onClick={() => dispatch(itemAddedToCart(product))}>shopping_cart</span>
                                     </div>
                                 </div>
                                 <div className={`${showBuyBtn} ${state}`}>
                                     <div className='buy-btn'
-                                         onClick={() => dispatch(itemAddedToCart(item))}>ADD TO CART
+                                         onClick={() => dispatch(itemAddedToCart(product))}>ADD TO CART
                                     </div>
                                 </div>
                             </>

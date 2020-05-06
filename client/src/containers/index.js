@@ -1,7 +1,7 @@
-import ListItemsContainer from './list-items-containers';
+import ListProductContainer from './list-product-containers';
 import CartContainer from './cart-container';
 
 export {
-    ListItemsContainer,
+    ListProductContainer,
     CartContainer
 }

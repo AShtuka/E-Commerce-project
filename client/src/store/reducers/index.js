@@ -1,18 +1,18 @@
 import {combineReducers} from "redux";
 
 import shoppingCart from "./shopping-cart";
-import goodsList from "./goods-list";
-import categoriesList from "./categories-list";
+import listProduct from "./list-product";
+import categoriesList from "./list-category";
 import shopHeaderMainMenu from "./shop-header-main-menu";
 import shopHeaderMobileMenu from './shop-header-mobile-menu';
-import shopItem from './shop-item';
+import product from './product';
 
 const reducer = combineReducers({
         shoppingCart,
-        goodsList,
+        listProduct,
         shopHeaderMainMenu,
         shopHeaderMobileMenu,
-        shopItem,
+        product,
         categoriesList
     });
 

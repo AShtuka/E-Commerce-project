@@ -1,25 +1,25 @@
 const initialState = {
-    itemId: null,
+    productId: null,
     isHover: false
 };
 
-const ShopItem = (state = initialState, action) => {
+const Product = (state = initialState, action) => {
 
     switch (action.type) {
-        case 'SHOP_ITEM_HOVER' :
+        case 'PRODUCT_HOVER' :
             return {
-                itemId: action.payload,
+                productId: action.payload,
                 isHover: true
             };
 
-        case 'SHOP_ITEM_LOSE_HOVER' :
+        case 'PRODUCT_LOSE_HOVER' :
             return {
                 isHover: false,
-                itemId: null
+                productId: null
             };
 
         default: return state;
     }
 };
 
-export default ShopItem;
+export default Product;

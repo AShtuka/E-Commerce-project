@@ -1,20 +1,20 @@
 import React from "react";
 
-import Item from "../item";
+import Item from "../product";
 
 import './list-items.css';
 import {useSelector} from "react-redux";
 
 const ListItems = () => {
 
-    const items = useSelector(state => state.goodsList.goods);
+    const products = useSelector(state => state.listProduct.products);
 
     return (
         <div className="items-container">
             {
-                items.map(item => {
-                    return <Item key={item.id}
-                                 item={item}/>;
+                products.map(product => {
+                    return <Item key={product.id}
+                                 product={product}/>;
                 })
             }
         </div>

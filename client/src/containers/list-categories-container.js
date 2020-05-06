@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchCategories} from "../store/actions/list-categories";
+import {fetchCategories} from "../store/actions/list-category";
 
 import Spinner from "../components/spinner";
 import ErrorIndicator from "../components/error-indicator";
 import ErrorBoundary from "../components/error-boundary";
-import ListCategories from "../components/list-categories";
+import ListCategories from "../components/list-category";
 
 const ListICategoriesContainer = () => {
 

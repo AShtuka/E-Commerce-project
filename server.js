@@ -6,27 +6,15 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 //const mainRoute = require("./routes/index");
-const itemsList = require('./test-data/items-list');
-const categoriesList = require('./test-data/categories-list');
+const category = require('./routes/category');
+const product = require('./routes/product');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// API calls
-app.get('/api/items-list', (req, res) => {
-    res.send(itemsList);
-});
+app.use('/api/category', category);
+app.use('/api/product', product);
 
-app.get('/api/categories-list', (req, res) => {
-    res.send(categoriesList);
-});
-
-app.post('/api/world', (req, res) => {
-    console.log(req.body);
-    res.send(
-        `I received your POST request. This is what you sent me: ${req.body.post}`,
-    );
-});
 
 if (process.env.NODE_ENV === 'production') {
     // Serve any static files
