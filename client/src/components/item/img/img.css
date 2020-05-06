@@ -2,20 +2,19 @@
     padding: 10px;
 }
 
-.fade-enter img {
+
+.entering {
     opacity: 0.01;
 }
-.fade-enter-active img {
+.entered {
     opacity: 1;
+    transition: opacity 200ms ease-in;
 }
-.fade-exit img{
-    opacity: 1;
-}
-.fade-exit-active img {
+.exiting {
     opacity: 0.01;
 }
-.fade-enter-active img,
-.fade-exit-active img {
+.exited {
+    opacity: 1;
     transition: opacity 200ms ease-in;
 }
 

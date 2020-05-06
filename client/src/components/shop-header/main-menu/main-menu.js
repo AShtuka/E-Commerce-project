@@ -1,9 +1,11 @@
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
-import './main-menu.css';
+import Transition from "react-transition-group/Transition";
 import ListCategoriesContainer from "../../../containers/list-categories-container";
 import {useDispatch, useSelector} from "react-redux";
 import {listCategoryShow, listCategoryHidden, listCategoryLostHover} from "../../../store/actions/shop-header";
+
+import './main-menu.css';
 
 const MainMenu = () => {
 
@@ -30,13 +32,21 @@ const MainMenu = () => {
             >
                 <Link to="/catalog">CATALOG</Link>
             </li>
-            <div className={showListCategory}
-                 onMouseOver={() => dispatch(listCategoryShow())}
-                 onMouseLeave={() => dispatch(listCategoryLostHover())}
-                 onClick={() => dispatch(listCategoryHidden())}
-            >
-                <ListCategoriesContainer />
-            </div>
+            <Transition in={appearance} timeout={200}>
+                {
+                    (state) => {
+                        return (
+                            <div className={`${showListCategory} ${state}`}
+                                 onMouseOver={() => dispatch(listCategoryShow())}
+                                 onMouseLeave={() => dispatch(listCategoryLostHover())}
+                                 onClick={() => dispatch(listCategoryHidden())}
+                            >
+                                <ListCategoriesContainer />
+                            </div>
+                        )
+                    }
+                }
+            </Transition>
             <li>
                 <Link to="/delivery">DELIVERY</Link>
             </li>
