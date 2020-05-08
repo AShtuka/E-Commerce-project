@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {listCategoryOpen, mobileMenuOpen} from "../../../store/actions/shop-header";
 import Transition from "react-transition-group/Transition";
 import {loginFormOpen} from "../../../store/actions/login";
+import {Link} from "react-router-dom";
 
 const MobileMenu = () => {
 
@@ -67,6 +68,11 @@ const MobileMenu = () => {
                                         <div>DELIVERY</div>
                                         <div>BLOG</div>
                                         <div>CONTACTS</div>
+                                        <div>
+                                            <Link to="/personal-cabinet">
+                                                <span className='cabinet'>CABINET</span>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className='empty-block' onClick={() => dispatch(mobileMenuOpen())}></div>

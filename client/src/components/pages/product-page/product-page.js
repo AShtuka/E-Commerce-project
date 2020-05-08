@@ -5,18 +5,15 @@ import MainLayout from "../layouts/main-layout";
 
 import './product-page.css'
 import ListCategories from "../../list-category";
+import PageContainer from "../layouts/page-container";
 
 const ProductPage = () => {
     return (
         <MainLayout>
-            <div className='shopping-page-container'>
-                <div className='shopping-page-menu'>
-                    <ListCategories />
-                </div>
-                <div className='shopping-page-items'>
-                    <ListProductContainer />
-                </div>
-            </div>
+            <PageContainer
+                menu={<ListCategories/>}
+                content={<ListProductContainer/>}
+            />
         </MainLayout>
     )
 };

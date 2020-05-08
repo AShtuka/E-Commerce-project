@@ -6,6 +6,7 @@ import './app.css';
 import HomePage from "../pages/home-page";
 import CartPage from "../pages/cart-page";
 import ProductPage from "../pages/product-page";
+import PersonalCabinet from "../pages/personal-cabinet";
 
 const App = () => {
     return (
@@ -16,6 +17,9 @@ const App = () => {
 
             <Route  path='/cart'
                     component = {CartPage}/>
+
+            <Route  path='/personal-cabinet'
+                    component = {PersonalCabinet}/>
 
             <Route  path='/shopping-page'
                     component = {ProductPage}/>

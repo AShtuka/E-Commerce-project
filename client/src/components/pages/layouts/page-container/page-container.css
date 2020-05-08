@@ -1,0 +1,21 @@
+.page-container {
+    display: flex;
+}
+
+.page-menu {
+    width: 25%;
+}
+
+.page-items {
+    width: 75%;
+}
+
+@media screen and (max-width: 767px) {
+    .page-menu {
+        display: none;
+    }
+
+    .page-items {
+        width: 100%;
+    }
+}

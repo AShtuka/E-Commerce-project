@@ -47,6 +47,9 @@ const MainMenu = () => {
             <li>
                 <Link to="/contact">CONTACTS</Link>
             </li>
+            <li>
+                <Link to="/personal-cabinet">CABINET</Link>
+            </li>
         </ul>
     )
 };

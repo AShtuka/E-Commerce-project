@@ -11,7 +11,7 @@ const Img =({imgUrl, id}) => {
 
     return (
         <div className="card-image">
-            <Transition in={(id === productId)} timeout={200}>
+            <Transition in={(id === productId)} timeout={0}>
                 {
                     (state) =>  <img className={state} src={img} alt='NOT FOUND' />
                 }
