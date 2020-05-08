@@ -3,10 +3,10 @@ import React from "react";
 import {ListProductContainer} from '../../../containers'
 import MainLayout from "../layouts/main-layout";
 
-import './shopping-page.css'
+import './product-page.css'
 import ListCategories from "../../list-category";
 
-const ShoppingPage = () => {
+const ProductPage = () => {
     return (
         <MainLayout>
             <div className='shopping-page-container'>
@@ -21,4 +21,4 @@ const ShoppingPage = () => {
     )
 };
 
-export default ShoppingPage;
+export default ProductPage;

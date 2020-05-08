@@ -6,6 +6,7 @@ import categoriesList from "./list-category";
 import shopHeaderMainMenu from "./shop-header-main-menu";
 import shopHeaderMobileMenu from './shop-header-mobile-menu';
 import product from './product';
+import loginForm from './login'
 
 const reducer = combineReducers({
         shoppingCart,
@@ -13,7 +14,8 @@ const reducer = combineReducers({
         shopHeaderMainMenu,
         shopHeaderMobileMenu,
         product,
-        categoriesList
+        categoriesList,
+        loginForm,
     });
 
 export default reducer;

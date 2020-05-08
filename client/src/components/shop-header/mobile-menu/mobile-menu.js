@@ -4,6 +4,7 @@ import ListCategories from "../../list-category";
 import {useDispatch, useSelector} from "react-redux";
 import {listCategoryOpen, mobileMenuOpen} from "../../../store/actions/shop-header";
 import Transition from "react-transition-group/Transition";
+import {loginFormOpen} from "../../../store/actions/login";
 
 const MobileMenu = () => {
 
@@ -16,6 +17,11 @@ const MobileMenu = () => {
     const clickHandler = () => {
         dispatch(listCategoryOpen());
         dispatch(mobileMenuOpen())
+    };
+
+    const loginClickHandler = () => {
+        dispatch(mobileMenuOpen());
+        dispatch(loginFormOpen());
     };
 
     return (
@@ -41,7 +47,7 @@ const MobileMenu = () => {
                                             <span className="material-icons mobile-menu-btn-icon">favorite</span>
                                             WISH LIST
                                         </div>
-                                        <div className="mobile-menu-btn">
+                                        <div className="mobile-menu-btn" onClick={loginClickHandler}>
                                             <span className="material-icons mobile-menu-btn-icon">account_circle</span>
                                             LOG IN
                                         </div>

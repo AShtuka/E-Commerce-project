@@ -5,7 +5,7 @@ import './app.css';
 
 import HomePage from "../pages/home-page";
 import CartPage from "../pages/cart-page";
-import ShoppingPage from "../pages/shopping-page";
+import ProductPage from "../pages/product-page";
 
 const App = () => {
     return (
@@ -18,7 +18,7 @@ const App = () => {
                     component = {CartPage}/>
 
             <Route  path='/shopping-page'
-                    component = {ShoppingPage}/>
+                    component = {ProductPage}/>
         </Switch>
     )
 };

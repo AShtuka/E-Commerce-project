@@ -1,0 +1,157 @@
+.login-container {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    top: 0
+}
+
+.login-container.entering {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.login-container.entered {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 500ms, transform 500ms;
+}
+.login-container.exiting {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.login-container.exited {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.input-field .prefix.active {
+    color: #105180;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=password]:not(.browser-default):focus:not([readonly])+label,
+input[type=email]:not(.browser-default):focus:not([readonly])+label
+{
+ color: #105180;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly])
+{
+    border-bottom: 1px solid #105180;
+    box-shadow: 0 1px 0 0 #105180;
+}
+
+input.valid[type=text]:not(.browser-default),
+input.valid[type=password]:not(.browser-default),
+input.valid[type=email]:not(.browser-default)
+{
+    border-bottom: 1px solid #105180;
+    box-shadow: 0 1px 0 0 #105180;
+}
+
+.auth-container {
+    width: 600px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f5f6f8;
+    padding:30px;
+    overflow: hidden;
+    text-align: center;
+    z-index: 1000;
+}
+
+.login-form-container {
+    margin: 33%  0;
+}
+
+.login-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 22px;
+    border: 1px solid #105180;
+    color: #105180;
+    font-weight:500;
+    transition: all 500ms ease;
+    margin-bottom: 35px;
+}
+
+.login-btn:hover {
+    color: #f5f6f8;
+    background-color: #105180;
+    box-shadow: none;
+}
+
+.pass-link {
+    margin: 35px 0;
+    color: #105180;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.sign-up-link {
+    color: #105180;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.form-container {
+    margin-top: 35px;
+}
+
+.login-empty-block {
+    width: calc(100% - 600px);
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    height: 100vh;
+    position: absolute;
+    right: 600px;
+    top: 0;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.login-form-container.entering {
+    opacity: 0.01;
+}
+.login-form-container.entered {
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+}
+.login-form-container.exiting {
+    opacity: 0.01;
+}
+.login-form-container.exited {
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+}
+
+@media screen and (max-width: 992px) {
+    .auth-container {
+        width: 450px;
+    }
+
+    .login-empty-block {
+        width: calc(100% - 450px);
+        right: 450px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .auth-container {
+        width: 300px;
+        padding: 5px;
+    }
+
+    .login-empty-block {
+        width: calc(100% - 300px);
+        right: 300px;
+    }
+
+}

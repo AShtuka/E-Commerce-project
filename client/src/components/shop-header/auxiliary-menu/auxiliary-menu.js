@@ -1,12 +1,14 @@
 import React, {Fragment} from "react";
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 import './auxiliary-menu.css'
+import {loginFormOpen} from "../../../store/actions/login";
 
 const AuxiliaryMenu = () => {
 
     const cartItemsAmount = useSelector(state => state.shoppingCart.cartItemsAmount);
+    const dispatch = useDispatch();
 
     return (
         <Fragment>
@@ -17,7 +19,7 @@ const AuxiliaryMenu = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/personal-cabinet">
+                    <Link to="#" onClick={() => dispatch(loginFormOpen())}>
                         <span className="material-icons vertical-alight">account_circle</span>
                     </Link>
                 </li>

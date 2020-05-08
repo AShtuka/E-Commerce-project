@@ -1,3 +1,3 @@
-import ShoppingPage from "./shopping-page";
+import ProductPage from "./product-page";
 
-export default ShoppingPage;
+export default ProductPage;
