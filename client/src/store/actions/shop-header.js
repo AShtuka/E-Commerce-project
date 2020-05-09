@@ -28,10 +28,17 @@ const mobileMenuOpen = () => {
     }
 };
 
+const personalCabinetMenuOpen = () => {
+    return {
+        type: 'PERSONAL_CABINET_MENU_OPEN'
+    }
+};
+
 export {
     listCategoryHidden,
     listCategoryShow,
     listCategoryLostHover,
     listCategoryOpen,
     mobileMenuOpen,
+    personalCabinetMenuOpen,
 };

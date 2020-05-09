@@ -2,18 +2,22 @@ import React, {Fragment} from "react";
 import './mobile-menu.css';
 import ListCategories from "../../list-category";
 import {useDispatch, useSelector} from "react-redux";
-import {listCategoryOpen, mobileMenuOpen} from "../../../store/actions/shop-header";
+import {listCategoryOpen, mobileMenuOpen, personalCabinetMenuOpen} from "../../../store/actions/shop-header";
 import Transition from "react-transition-group/Transition";
 import {loginFormOpen} from "../../../store/actions/login";
 import {Link} from "react-router-dom";
+import PersonalCabinetMenu from "../../personal-cabinet/menu";
 
 const MobileMenu = () => {
 
     const isCategoriesOpen = useSelector(state => state.shopHeaderMobileMenu.isCategoriesOpen);
     const isMenuOpen = useSelector(state => state.shopHeaderMobileMenu.isMenuOpen);
+    const isPersonalCabinetMenuOpen = useSelector(state => state.shopHeaderMobileMenu.isPersonalCabinetMenuOpen);
     const dispatch = useDispatch();
-    const btnName = isCategoriesOpen ? 'remove' : 'add';
+    const categoryBtnName = isCategoriesOpen ? 'remove' : 'add';
+    const personalCabinetBtnName = isPersonalCabinetMenuOpen ? 'remove' : 'add';
     const hiddenCategories = isCategoriesOpen ? '' : 'hidden';
+    const hiddenPersonalCabinetMenu = isPersonalCabinetMenuOpen ? '' : 'hidden';
 
     const clickHandler = () => {
         dispatch(listCategoryOpen());
@@ -58,7 +62,7 @@ const MobileMenu = () => {
                                             CATALOG
                                             <span className="material-icons mobile-menu-btn-icon right"
                                                   onClick={() => dispatch(listCategoryOpen())}>
-                                                    {btnName}
+                                                    {categoryBtnName}
                                             </span>
                                             <span className={hiddenCategories}
                                                   onClick={clickHandler}>
@@ -70,8 +74,15 @@ const MobileMenu = () => {
                                         <div>CONTACTS</div>
                                         <div>
                                             <Link to="/personal-cabinet">
-                                                <span className='cabinet'>CABINET</span>
+                                                <span className='cabinet'>PERSONAL CABINET</span>
                                             </Link>
+                                            <span className="material-icons mobile-menu-btn-icon right"
+                                                  onClick={() => dispatch(personalCabinetMenuOpen())}>
+                                                    {personalCabinetBtnName}
+                                            </span>
+                                            <span className={hiddenPersonalCabinetMenu}>
+                                                <PersonalCabinetMenu />
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
